@@ -23,9 +23,42 @@ public class HttpResponse<T> {
     private T data;
 
     /**
+     * 扩展消息
+     */
+    private String exdMsg;
+
+    /**
      * 响应时间戳
      */
     private Long timestamp;
+
+    public HttpResponse() {
+        this.timestamp = System.currentTimeMillis();
+    }
+
+    public HttpResponse(Integer code, String message, T data, String exdMsg) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
+        this.exdMsg = exdMsg;
+        this.timestamp = System.currentTimeMillis();
+    }
+
+    public static <T> HttpResponse<T> success() {
+        return success(null);
+    }
+
+    public static <T> HttpResponse<T> success(T data) {
+        return new HttpResponse(200, "success", data, null);
+    }
+
+    public static HttpResponse fail() {
+        return new HttpResponse(500, "fail", null, null);
+    }
+
+    public static HttpResponse fail(Integer code, String message, String exdMsg) {
+        return new HttpResponse(code, exdMsg, null, exdMsg);
+    }
 
     public Integer getCode() {
         return code;

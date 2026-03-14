@@ -1,4 +1,4 @@
-package org.lollipop.contant;
+package org.lollipop.exception;
 
 import java.util.HashMap;
 import java.util.Map;
