@@ -57,7 +57,7 @@ public class HttpResponse<T> {
     }
 
     public static HttpResponse fail(Integer code, String message, String exdMsg) {
-        return new HttpResponse(code, exdMsg, null, exdMsg);
+        return new HttpResponse(code, message, null, exdMsg);
     }
 
     public Integer getCode() {

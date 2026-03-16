@@ -26,6 +26,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BusinessException.class)
     public HttpResponse<?> handleBusinessException(BusinessException e) {
         logger.warn("业务异常：{}", e.getMessage());
+        System.out.println(e.getMessage());
         return HttpResponse.fail(e.getCode(), e.getMessage(), null);
     }
 
@@ -35,7 +36,7 @@ public class GlobalExceptionHandler {
                 .map(FieldError::getDefaultMessage)
                 .collect(Collectors.joining("; "));
         logger.warn("参数校验失败：{}", errorMessage);
-        return HttpResponse.fail(400, errorMessage, null);
+        return HttpResponse.fail(400, e.getMessage(), errorMessage);
     }
 
     @ExceptionHandler(BindException.class)
@@ -44,7 +45,7 @@ public class GlobalExceptionHandler {
                 .map(FieldError::getDefaultMessage)
                 .collect(Collectors.joining("; "));
         logger.warn("参数绑定失败：{}", errorMessage);
-        return HttpResponse.fail(400, "参数绑定失败：{}" + errorMessage, null);
+        return HttpResponse.fail(400, "参数绑定失败：{}" + e.getMessage(), errorMessage);
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
