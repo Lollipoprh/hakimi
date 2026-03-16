@@ -1,5 +1,7 @@
 package org.lollipop.controller;
 
+import org.lollipop.exception.BusinessException;
+import org.lollipop.exception.ExceptionCode;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,7 +20,10 @@ public class FileUploadController {
     private static final String UPLOAD_DIR = "/data/files/";
 
     @PostMapping("/upload")
-    public String uploadFile(@RequestParam("file") MultipartFile file) {
+    public String uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("keyword") String keyword) {
+        if (!keyword.equals("cwhcwh")) {
+            throw new BusinessException(ExceptionCode.用户未登录);
+        }
 
         // 判断文件是否为空
         if (file.isEmpty()) {
