@@ -2,7 +2,7 @@
 <configuration>
     <!-- 1. 定义属性变量，方便统一管理 -->
     <property name="LOG_PATH" value="D:\work_space\logs"/>
-    <property name="LOG_FILE_NAME" value="hakimi-app"/>
+    <property name="LOG_FILE_NAME" value="hakimi-app-conversation"/>
     <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
 
     <!-- 2. 定义控制台输出 Appender -->
