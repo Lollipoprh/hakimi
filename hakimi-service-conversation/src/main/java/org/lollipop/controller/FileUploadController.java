@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/file")
-public class FileUploadController {
+public class FileUploadController extends BaseController {
 
     // 文件存储路径（服务器目录）
     private static final String UPLOAD_DIR = "/data/files/";
