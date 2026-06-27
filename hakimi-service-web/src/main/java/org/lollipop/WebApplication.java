@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("org.lollipop.mapper")
-public class ConversationApplication {
+public class WebApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ConversationApplication.class, args);
+        SpringApplication.run(WebApplication.class, args);
     }
 }

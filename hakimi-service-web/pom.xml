@@ -9,9 +9,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>hakimi-service-conversation</artifactId>
-    <name>hakimi-service-conversation</name>
-    <description>hakimi-service-conversation</description>
+    <artifactId>hakimi-service-web</artifactId>
+    <name>hakimi-service-web</name>
+    <description>hakimi-service-web</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
