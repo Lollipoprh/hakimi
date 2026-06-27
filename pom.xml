@@ -12,7 +12,7 @@
     <modules>
         <module>hakimi-module-repository</module>
         <module>hakimi-module-model</module>
-        <module>hakimi-service-conversation</module>
+        <module>hakimi-service-web</module>
         <module>hakimi-module-common</module>
     </modules>
 

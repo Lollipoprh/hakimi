@@ -9,9 +9,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>hakimi-service-conversation</artifactId>
-    <name>hakimi-service-conversation</name>
-    <description>hakimi-service-conversation</description>
+    <artifactId>hakimi-service-web</artifactId>
+    <name>hakimi-service-web</name>
+    <description>hakimi-service-web</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -23,6 +23,10 @@
         <dependency>
             <groupId>org.lollipop</groupId>
             <artifactId>hakimi-module-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.lollipop</groupId>
+            <artifactId>hakimi-module-repository</artifactId>
         </dependency>
 
         <dependency>
@@ -49,6 +53,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
         </dependency>
 
     </dependencies>
@@ -83,6 +97,17 @@
                     <target>21</target>
                     <parameters>true</parameters>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <resources>
