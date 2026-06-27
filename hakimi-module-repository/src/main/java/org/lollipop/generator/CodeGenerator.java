@@ -59,6 +59,7 @@ public class CodeGenerator {
                 .enableChainModel()                              // 链式模型
                 .logicDeleteColumnName("is_deleted")             // 逻辑删除字段名
                 .versionColumnName("version")                    // 乐观锁字段名
+                .enableFileOverride()                            //开启文件覆盖
                 .mapperBuilder()
                 .enableBaseResultMap()                           // 生成通用 resultMap
                 .enableBaseColumnList()                          // 生成通用 columnList

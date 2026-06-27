@@ -9,7 +9,7 @@ import org.lollipop.entity.Media;
  * </p>
  *
  * @author lollipop
- * @since 2026-03-19
+ * @since 2026-06-28
  */
 public interface MediaMapper extends BaseMapper<Media> {
 

@@ -9,7 +9,7 @@ import org.lollipop.entity.User;
  * </p>
  *
  * @author lollipop
- * @since 2026-03-19
+ * @since 2026-06-28
  */
 public interface UserMapper extends BaseMapper<User> {
 

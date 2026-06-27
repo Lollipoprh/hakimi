@@ -13,7 +13,7 @@ import java.util.Date;
  * </p>
  *
  * @author lollipop
- * @since 2026-03-19
+ * @since 2026-06-28
  */
 public class User implements Serializable {
 
@@ -23,37 +23,28 @@ public class User implements Serializable {
      * id
      */
     @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
-     * 账号
-     */
-    private String userAccount;
-
-    /**
-     * 密码
-     */
-    private String userPassword;
-
-    /**
-     * 用户昵称
+     * 用户名
      */
     private String userName;
 
     /**
-     * 用户头像
+     * 密码
      */
-    private String userAvatar;
+    private String password;
 
     /**
-     * 用户简介
+     * 昵称
      */
-    private String userProfile;
+    private String nickname;
 
     /**
-     * 用户角色：user/admin
+     * 头像id
      */
-    private String userRole;
+    private Long avatarId;
 
     /**
      * 创建时间
@@ -66,8 +57,9 @@ public class User implements Serializable {
     private Date updateTime;
 
     /**
-     * 是否删除
+     * 逻辑删除
      */
+    @TableLogic
     @TableLogic
     private Byte isDeleted;
 
@@ -80,24 +72,6 @@ public class User implements Serializable {
         return this;
     }
 
-    public String getUserAccount() {
-        return userAccount;
-    }
-
-    public User setUserAccount(String userAccount) {
-        this.userAccount = userAccount;
-        return this;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public User setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-        return this;
-    }
-
     public String getUserName() {
         return userName;
     }
@@ -107,30 +81,30 @@ public class User implements Serializable {
         return this;
     }
 
-    public String getUserAvatar() {
-        return userAvatar;
+    public String getPassword() {
+        return password;
     }
 
-    public User setUserAvatar(String userAvatar) {
-        this.userAvatar = userAvatar;
+    public User setPassword(String password) {
+        this.password = password;
         return this;
     }
 
-    public String getUserProfile() {
-        return userProfile;
+    public String getNickname() {
+        return nickname;
     }
 
-    public User setUserProfile(String userProfile) {
-        this.userProfile = userProfile;
+    public User setNickname(String nickname) {
+        this.nickname = nickname;
         return this;
     }
 
-    public String getUserRole() {
-        return userRole;
+    public Long getAvatarId() {
+        return avatarId;
     }
 
-    public User setUserRole(String userRole) {
-        this.userRole = userRole;
+    public User setAvatarId(Long avatarId) {
+        this.avatarId = avatarId;
         return this;
     }
 
@@ -165,12 +139,10 @@ public class User implements Serializable {
     public String toString() {
         return "User{" +
         "id = " + id +
-        ", userAccount = " + userAccount +
-        ", userPassword = " + userPassword +
         ", userName = " + userName +
-        ", userAvatar = " + userAvatar +
-        ", userProfile = " + userProfile +
-        ", userRole = " + userRole +
+        ", password = " + password +
+        ", nickname = " + nickname +
+        ", avatarId = " + avatarId +
         ", createTime = " + createTime +
         ", updateTime = " + updateTime +
         ", isDeleted = " + isDeleted +

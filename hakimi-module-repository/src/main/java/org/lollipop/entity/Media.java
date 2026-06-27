@@ -1,5 +1,8 @@
 package org.lollipop.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -10,12 +13,17 @@ import java.util.Date;
  * </p>
  *
  * @author lollipop
- * @since 2026-03-19
+ * @since 2026-06-28
  */
 public class Media implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * id
+     */
+    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
@@ -34,9 +42,9 @@ public class Media implements Serializable {
     private String filePath;
 
     /**
-     * 文件大小(B)
+     * 文件大小(MB)
      */
-    private Long fileSize;
+    private Double fileSize;
 
     /**
      * 创建时间
@@ -47,6 +55,13 @@ public class Media implements Serializable {
      * 修改时间
      */
     private Date updateTime;
+
+    /**
+     * 逻辑删除
+     */
+    @TableLogic
+    @TableLogic
+    private Boolean isDeleted;
 
     public Long getId() {
         return id;
@@ -84,11 +99,11 @@ public class Media implements Serializable {
         return this;
     }
 
-    public Long getFileSize() {
+    public Double getFileSize() {
         return fileSize;
     }
 
-    public Media setFileSize(Long fileSize) {
+    public Media setFileSize(Double fileSize) {
         this.fileSize = fileSize;
         return this;
     }
@@ -111,6 +126,15 @@ public class Media implements Serializable {
         return this;
     }
 
+    public Boolean getIsDeleted() {
+        return isDeleted;
+    }
+
+    public Media setIsDeleted(Boolean isDeleted) {
+        this.isDeleted = isDeleted;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "Media{" +
@@ -121,6 +145,7 @@ public class Media implements Serializable {
         ", fileSize = " + fileSize +
         ", createTime = " + createTime +
         ", updateTime = " + updateTime +
+        ", isDeleted = " + isDeleted +
         "}";
     }
 }
