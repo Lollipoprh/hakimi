@@ -23,7 +23,6 @@ public class User implements Serializable {
      * id
      */
     @TableId(value = "id", type = IdType.AUTO)
-    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     /**
@@ -59,7 +58,6 @@ public class User implements Serializable {
     /**
      * 逻辑删除
      */
-    @TableLogic
     @TableLogic
     private Byte isDeleted;
 
@@ -138,14 +136,14 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-        "id = " + id +
-        ", userName = " + userName +
-        ", password = " + password +
-        ", nickname = " + nickname +
-        ", avatarId = " + avatarId +
-        ", createTime = " + createTime +
-        ", updateTime = " + updateTime +
-        ", isDeleted = " + isDeleted +
-        "}";
+                "id = " + id +
+                ", userName = " + userName +
+                ", password = " + password +
+                ", nickname = " + nickname +
+                ", avatarId = " + avatarId +
+                ", createTime = " + createTime +
+                ", updateTime = " + updateTime +
+                ", isDeleted = " + isDeleted +
+                "}";
     }
 }

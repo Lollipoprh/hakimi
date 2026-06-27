@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author lollipop
@@ -22,7 +22,6 @@ public class Media implements Serializable {
     /**
      * id
      */
-    @TableId(value = "id", type = IdType.AUTO)
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
@@ -59,7 +58,6 @@ public class Media implements Serializable {
     /**
      * 逻辑删除
      */
-    @TableLogic
     @TableLogic
     private Boolean isDeleted;
 
@@ -138,14 +136,14 @@ public class Media implements Serializable {
     @Override
     public String toString() {
         return "Media{" +
-        "id = " + id +
-        ", fileName = " + fileName +
-        ", fileType = " + fileType +
-        ", filePath = " + filePath +
-        ", fileSize = " + fileSize +
-        ", createTime = " + createTime +
-        ", updateTime = " + updateTime +
-        ", isDeleted = " + isDeleted +
-        "}";
+                "id = " + id +
+                ", fileName = " + fileName +
+                ", fileType = " + fileType +
+                ", filePath = " + filePath +
+                ", fileSize = " + fileSize +
+                ", createTime = " + createTime +
+                ", updateTime = " + updateTime +
+                ", isDeleted = " + isDeleted +
+                "}";
     }
 }
